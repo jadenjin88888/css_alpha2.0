@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bj1pnx1dre66k"]
+
+[ext_resource type="Texture2D" uid="uid://cgj6fblubmnai" path="res://floor_texture/grass.jpg" id="1_cjd4a"]
+[ext_resource type="Texture2D" uid="uid://d3rdn6knpyceq" path="res://floor_texture/brick.jpeg" id="2_hlmqn"]
+[ext_resource type="PackedScene" uid="uid://cxkg4dyj1wkxh" path="res://de_dust2_-_cs_map.glb" id="3_csmap"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7gp0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sv1i0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wqghv"]
+albedo_texture = ExtResource("1_cjd4a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkcq0"]
+albedo_texture = ExtResource("2_hlmqn")
+
+[node name="brickroom" type="Node3D" unique_id=42948356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2083.9004)
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=1006300299]
+transform = Transform3D(121.26534, 0, 0, 0, 1, 0, 0, 0, 71.5156, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1517766368]
+shape = SubResource("BoxShape3D_u7gp0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=234746941]
+mesh = SubResource("BoxMesh_sv1i0")
+surface_material_override/0 = SubResource("StandardMaterial3D_wqghv")
+
+[node name="wall" type="StaticBody3D" parent="." unique_id=103840406]
+transform = Transform3D(127.309074, 0, 0, 0, -3.438284e-08, -22.925539, 0, 0.7865877, -1.0021072e-06, -0.08952713, 12.064807, -36.346363)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall" unique_id=755756586]
+shape = SubResource("BoxShape3D_u7gp0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall" unique_id=2118730131]
+transform = Transform3D(1.1595553, 0, 1.7484562e-07, -2.7105054e-20, 1, 2.2737368e-13, -2.0274308e-07, 0, 1.0000001, 0, 1.315918, 0.019387305)
+mesh = SubResource("BoxMesh_sv1i0")
+surface_material_override/0 = SubResource("StandardMaterial3D_rkcq0")
+
+[node name="wall2" type="StaticBody3D" parent="." unique_id=527139276]
+transform = Transform3D(-3.1674742e-06, 0.9998478, 0.4016013, 1.1059365e-07, -0.017452385, 23.007755, 72.48544, 4.371805e-08, -1.7554552e-08, 60.71126, 12.064807, -0.25441718)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall2" unique_id=1177304806]
+shape = SubResource("BoxShape3D_u7gp0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall2" unique_id=98451827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, -0.0018813409)
+mesh = SubResource("BoxMesh_sv1i0")
+surface_material_override/0 = SubResource("StandardMaterial3D_rkcq0")
+
+[node name="wall3" type="StaticBody3D" parent="." unique_id=1967369029]
+transform = Transform3D(-3.02853e-06, 0.99999976, -1.005854e-06, 0, -4.3711378e-08, -23.011257, -69.28469, -4.3711378e-08, 4.3967275e-14, -60.483524, 11.778125, -0.09015584)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3" unique_id=733901916]
+shape = SubResource("BoxShape3D_u7gp0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall3" unique_id=1181032106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, -0.0018813409)
+mesh = SubResource("BoxMesh_sv1i0")
+surface_material_override/0 = SubResource("StandardMaterial3D_rkcq0")
+
+[node name="wall4" type="StaticBody3D" parent="." unique_id=11902556]
+transform = Transform3D(120.121445, 0, 0, 0, -4.371139e-08, -23.011257, 0, 1, -1.005854e-06, -0.08952713, 12.064807, 34.79495)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall4" unique_id=2091466207]
+shape = SubResource("BoxShape3D_u7gp0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall4" unique_id=1454669112]
+transform = Transform3D(1, 0, 0, 0, 1, -2.2737368e-13, 0, 0, 1.0000001, 0, -0.4765091, 0.03069827)
+mesh = SubResource("BoxMesh_sv1i0")
+surface_material_override/0 = SubResource("StandardMaterial3D_rkcq0")
+
+[node name="Sketchfab_Scene" parent="." unique_id=2051645971 instance=ExtResource("3_csmap")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -3942.181, -5000)
