@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bnbgbsolyyct2" path="res://trebuc.ttf" id="7_jsk3o"]
 [ext_resource type="Script" uid="uid://flbku66exmru" path="res://pausemenu.gd" id="7_wc5p8"]
 [ext_resource type="PackedScene" uid="uid://cxkg4dyj1wkxh" path="res://de_dust2_-_cs_map.glb" id="9_4arys"]
+[ext_resource type="Script" uid="uid://ynyo4kufsq8n" path="res://dust2_collision_generator.gd" id="10_collision"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a202f"]
 
@@ -92,13 +93,10 @@ reflected_light_source = 2
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pf4ct"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
-size = Vector3(500, 2, 500)
-
 [node name="Node3D" type="Node3D" unique_id=904565362]
 
 [node name="player" type="CharacterBody3D" parent="." unique_id=1794035341 groups=["player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.004793, -27.560392, 13.246454)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.73779, 66.12083, -982.39526)
 floor_max_angle = 3.1415927
 script = ExtResource("1_a202f")
 
@@ -258,14 +256,12 @@ text = "."
 [node name="Enemy" parent="." unique_id=629577447 instance=ExtResource("4_r3fl7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0525885, 0)
 
-[node name="MapCollisionFloor" type="StaticBody3D" parent="." unique_id=680972153]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5000, -5000)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MapCollisionFloor" unique_id=510992256]
-shape = SubResource("BoxShape3D_floor")
-
 [node name="Sketchfab_Scene" parent="." unique_id=253927973 instance=ExtResource("9_4arys")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -5100, -6000)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -5000, -7000)
+
+[node name="Dust2CollisionGenerator" type="Node" parent="." unique_id=373650555]
+script = ExtResource("10_collision")
+target_path = NodePath("../Sketchfab_Scene")
 
 [connection signal="pressed" from="ui/Pausemenu/CenterContainer/VBoxContainer/resume" to="player" method="_on_resume_pressed"]
 [connection signal="pressed" from="ui/Pausemenu/CenterContainer/VBoxContainer/resume" to="ui/Pausemenu" method="_on_resume_pressed"]
