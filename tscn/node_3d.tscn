@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://bbvuqucxfywmx"]
+
+[ext_resource type="Script" uid="uid://c6tpjy4ikgdmr" path="res://player.gd" id="1_a202f"]
+[ext_resource type="AudioStream" uid="uid://c3yawnheeoce1" path="res://sound/half-life-2-death-sound.mp3" id="2_jka67"]
+[ext_resource type="Texture2D" uid="uid://c3fg0b6lfresv" path="res://lambda.jpg" id="4_jsk3o"]
+[ext_resource type="PackedScene" uid="uid://ig7w1r0plixd" path="res://enemy.tscn" id="4_r3fl7"]
+[ext_resource type="Script" uid="uid://dpbpx7nlr5h1v" path="res://glock.gd" id="5_4arys"]
+[ext_resource type="Texture2D" uid="uid://c45ykcqgquly3" path="res://weapons/weapon.png" id="5_i5arm"]
+[ext_resource type="FontFile" uid="uid://bnbgbsolyyct2" path="res://trebuc.ttf" id="7_jsk3o"]
+[ext_resource type="Script" uid="uid://flbku66exmru" path="res://pausemenu.gd" id="7_wc5p8"]
+[ext_resource type="PackedScene" uid="uid://cxkg4dyj1wkxh" path="res://de_dust2_-_cs_map.glb" id="9_4arys"]
+[ext_resource type="Script" uid="uid://ynyo4kufsq8n" path="res://dust2_collision_generator.gd" id="10_collision"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a202f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
+
+[sub_resource type="Sky" id="Sky_noarx"]
+sky_material = SubResource("ProceduralSkyMaterial_a202f")
+
+[sub_resource type="Environment" id="Environment_a202f"]
+background_mode = 2
+background_energy_multiplier = 0.71
+sky = SubResource("Sky_noarx")
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4arys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6iypd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tereu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cdqbm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imku0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlxy5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3v7ru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tcnuu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuemg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i0g27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ealrb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsnrv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lggff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0gvp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxd74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhlwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5t8nk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3e5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nu31w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obt1j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2yde8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_id0nj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1q667"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ype4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_riyl1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pb8dk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mu51"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmvb8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4i7mf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3s0n5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpkl4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4s1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pf4ct"]
+
+[node name="Node3D" type="Node3D" unique_id=904565362]
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=1794035341 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.67405, -2.2445288, 0.43653297)
+floor_max_angle = 3.1415927
+script = ExtResource("1_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1063817723]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_a202f")
+
+[node name="CameraPivot" type="Node3D" parent="player" unique_id=1991518119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player/CameraPivot" unique_id=1571633284]
+fov = 100.0
+near = 0.001
+far = 5000.0
+
+[node name="gun_ray" type="RayCast3D" parent="player/CameraPivot/Camera3D" unique_id=204257698]
+target_position = Vector3(0, 0, -100)
+
+[node name="death_sound" type="AudioStreamPlayer" parent="player" unique_id=1830031907]
+stream = ExtResource("2_jka67")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=940190765]
+transform = Transform3D(1, 0, 0, 0, 0.0047996617, 0.9999885, 0, -0.9999885, 0.0047996617, 0, 146.11708, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1109716585]
+environment = SubResource("Environment_a202f")
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=303871788]
+
+[node name="hud" type="Control" parent="ui" unique_id=1555345198]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="health" type="Label" parent="ui/hud" unique_id=906829683]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.51
+anchor_top = 5.0670004
+anchor_right = 7.51
+anchor_bottom = 5.0670004
+offset_left = -227.40002
+offset_top = 802.31995
+offset_right = -141.40002
+offset_bottom = 968.31995
+theme_override_font_sizes/font_size = 50
+text = "100"
+horizontal_alignment = 2
+
+[node name="armor" type="Label" parent="ui/hud" unique_id=1589049749]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 1001.0
+offset_right = 302.0
+offset_bottom = 1158.0
+theme_override_font_sizes/font_size = 50
+text = "100"
+
+[node name="lambda" type="TextureRect" parent="ui/hud" unique_id=1493531870]
+layout_mode = 0
+offset_left = -1939.0
+offset_top = -396.0
+offset_right = -1204.0
+offset_bottom = -86.0
+texture = ExtResource("4_jsk3o")
+
+[node name="glock" type="TextureRect" parent="ui" unique_id=1077809091]
+offset_left = 1224.0
+offset_top = 1054.0
+offset_right = 1779.0
+offset_bottom = 1447.0
+scale = Vector2(1.8824621, 2.3482041)
+texture = ExtResource("5_i5arm")
+expand_mode = 1
+script = ExtResource("5_4arys")
+
+[node name="Pausemenu" type="Control" parent="ui" unique_id=415864730]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_wc5p8")
+
+[node name="ColorRect" type="ColorRect" parent="ui/Pausemenu" unique_id=654911328]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -33.0
+offset_right = 3009.0
+offset_bottom = 1332.0
+color = Color(0, 0, 0, 0.17254902)
+
+[node name="CenterContainer" type="CenterContainer" parent="ui/Pausemenu" unique_id=2020198830]
+layout_mode = 0
+offset_right = 77.0
+offset_bottom = 68.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/Pausemenu/CenterContainer" unique_id=760677302]
+layout_mode = 2
+
+[node name="resume" type="Button" parent="ui/Pausemenu/CenterContainer/VBoxContainer" unique_id=698445602]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_jsk3o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4arys")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6iypd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tereu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_cdqbm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_imku0")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_wlxy5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3v7ru")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_tcnuu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tuemg")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_i0g27")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ealrb")
+text = "Resume"
+
+[node name="mainmenu" type="Button" parent="ui/Pausemenu/CenterContainer/VBoxContainer" unique_id=1308963668]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_jsk3o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jsnrv")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lggff")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s0gvp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vxd74")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dhlwf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5t8nk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_j3e5s")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_nu31w")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_obt1j")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_2yde8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_id0nj")
+text = "MainMenu"
+
+[node name="quit" type="Button" parent="ui/Pausemenu/CenterContainer/VBoxContainer" unique_id=926363108]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_jsk3o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1q667")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ype4i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_riyl1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_pb8dk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2mu51")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vmvb8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4i7mf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_3s0n5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qpkl4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g4s1x")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pf4ct")
+text = "Quit Game"
+
+[node name="crosshair" type="Label" parent="ui" unique_id=189582901]
+offset_left = 1007.0
+offset_top = 593.0
+offset_right = 1012.0
+offset_bottom = 616.0
+text = "."
+
+[node name="Enemy" parent="." unique_id=629577447 instance=ExtResource("4_r3fl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0525885, 0)
+
+[node name="Sketchfab_Scene" parent="." unique_id=253927973 instance=ExtResource("9_4arys")]
+transform = Transform3D(1.666667, 0, 0, 0, 1.666667, 0, 0, 0, 1.666667, 0, -1683.3333, -2000)
+
+[node name="Dust2CollisionGenerator" type="Node" parent="." unique_id=373650555]
+script = ExtResource("10_collision")
+target_path = NodePath("../Sketchfab_Scene")
+
+[connection signal="pressed" from="ui/Pausemenu/CenterContainer/VBoxContainer/resume" to="player" method="_on_resume_pressed"]
+[connection signal="pressed" from="ui/Pausemenu/CenterContainer/VBoxContainer/resume" to="ui/Pausemenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="ui/Pausemenu/CenterContainer/VBoxContainer/mainmenu" to="ui/Pausemenu" method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="ui/Pausemenu/CenterContainer/VBoxContainer/quit" to="ui/Pausemenu" method="_on_quit_pressed"]
