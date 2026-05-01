@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bbvuqucxfywmx"]
 
 [ext_resource type="Script" uid="uid://c6tpjy4ikgdmr" path="res://player.gd" id="1_a202f"]
-[ext_resource type="AudioStream" uid="uid://c3yawnheeoce1" path="res://sound/half-life-2-death-sound.mp3" id="2_jka67"]
+[ext_resource type="AudioStream" uid="uid://c3yawnheeoce1" path="res://half-life-2-death-sound.mp3" id="2_jka67"]
 [ext_resource type="Texture2D" uid="uid://c3fg0b6lfresv" path="res://lambda.jpg" id="4_jsk3o"]
 [ext_resource type="PackedScene" uid="uid://ig7w1r0plixd" path="res://enemy.tscn" id="4_r3fl7"]
 [ext_resource type="Script" uid="uid://dpbpx7nlr5h1v" path="res://glock.gd" id="5_4arys"]
-[ext_resource type="Texture2D" uid="uid://c45ykcqgquly3" path="res://weapons/weapon.png" id="5_i5arm"]
+[ext_resource type="Texture2D" uid="uid://c45ykcqgquly3" path="res://weapon.png" id="5_i5arm"]
 [ext_resource type="FontFile" uid="uid://bnbgbsolyyct2" path="res://trebuc.ttf" id="7_jsk3o"]
 [ext_resource type="Script" uid="uid://flbku66exmru" path="res://pausemenu.gd" id="7_wc5p8"]
 [ext_resource type="PackedScene" uid="uid://cxkg4dyj1wkxh" path="res://de_dust2_-_cs_map.glb" id="9_4arys"]
@@ -20,11 +20,14 @@ sky_material = SubResource("ProceduralSkyMaterial_a202f")
 
 [sub_resource type="Environment" id="Environment_a202f"]
 background_mode = 2
-background_energy_multiplier = 0.71
+background_energy_multiplier = 1.0
 sky = SubResource("Sky_noarx")
-ambient_light_source = 1
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 1.5
+ambient_light_source = 0
+ambient_light_color = Color(1, 0.88, 0.62, 1)
+ambient_light_energy = 1.4
+fog_enabled = true
+fog_light_color = Color(0.84, 0.77, 0.64, 1)
+fog_density = 0.022
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4arys"]
 
@@ -117,9 +120,6 @@ target_position = Vector3(0, 0, -100)
 
 [node name="death_sound" type="AudioStreamPlayer" parent="player" unique_id=1830031907]
 stream = ExtResource("2_jka67")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=940190765]
-transform = Transform3D(1, 0, 0, 0, 0.0047996617, 0.9999885, 0, -0.9999885, 0.0047996617, 0, 146.11708, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1109716585]
 environment = SubResource("Environment_a202f")
@@ -254,7 +254,7 @@ offset_bottom = 616.0
 text = "."
 
 [node name="Enemy" parent="." unique_id=629577447 instance=ExtResource("4_r3fl7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0525885, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3489094, -13.709145, 0)
 
 [node name="Sketchfab_Scene" parent="." unique_id=253927973 instance=ExtResource("9_4arys")]
 transform = Transform3D(1.666667, 0, 0, 0, 1.666667, 0, 0, 0, 1.666667, 0, -1683.3333, -2000)
@@ -262,6 +262,7 @@ transform = Transform3D(1.666667, 0, 0, 0, 1.666667, 0, 0, 0, 1.666667, 0, -1683
 [node name="Dust2CollisionGenerator" type="Node" parent="." unique_id=373650555]
 script = ExtResource("10_collision")
 target_path = NodePath("../Sketchfab_Scene")
+apply_in_editor = true
 
 [connection signal="pressed" from="ui/Pausemenu/CenterContainer/VBoxContainer/resume" to="player" method="_on_resume_pressed"]
 [connection signal="pressed" from="ui/Pausemenu/CenterContainer/VBoxContainer/resume" to="ui/Pausemenu" method="_on_resume_pressed"]

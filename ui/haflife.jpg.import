@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4174k4l5rop7"
-path="res://.godot/imported/haflife.jpg-220336c87ad42fa6aa37b1e9538ee378.ctex"
+path="res://.godot/imported/haflife.jpg-c07b6fd156c4d5f83e56826c9614d49b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://haflife.jpg"
-dest_files=["res://.godot/imported/haflife.jpg-220336c87ad42fa6aa37b1e9538ee378.ctex"]
+source_file="res://ui/haflife.jpg"
+dest_files=["res://.godot/imported/haflife.jpg-c07b6fd156c4d5f83e56826c9614d49b.ctex"]
 
 [params]
 

@@ -35,6 +35,7 @@ const SHOOT_COOLDOWN_TIME = 0.2
 
 var health = 100
 var armor = 0
+var death_sound_played := false
 var is_crouching = false
 
 const WALK_ACCELERATION = 99999.0
@@ -96,10 +97,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func take_damage(damage):
+	if health <= 0:
+		return
 	health -= damage
 	if health <= 0:
 		health = 0
-		death_sound.play()
+		if not death_sound_played:
+			death_sound_played = true
+			death_sound.play()
 
 func shoot():
 	if gun_ray.is_colliding():

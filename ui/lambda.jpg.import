@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3fg0b6lfresv"
-path="res://.godot/imported/lambda.jpg-144d49af4942d60d8d906180467efefc.ctex"
+path="res://.godot/imported/lambda.jpg-0f12a01742634a0065b8c622d986d381.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://lambda.jpg"
-dest_files=["res://.godot/imported/lambda.jpg-144d49af4942d60d8d906180467efefc.ctex"]
+source_file="res://ui/lambda.jpg"
+dest_files=["res://.godot/imported/lambda.jpg-0f12a01742634a0065b8c622d986d381.ctex"]
 
 [params]
 

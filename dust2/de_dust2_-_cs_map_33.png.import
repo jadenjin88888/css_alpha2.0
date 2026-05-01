@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kdj7hqhj7o1c"
-path.s3tc="res://.godot/imported/de_dust2_-_cs_map_33.png-b347b4a74cf244677e3216eae5e635f2.s3tc.ctex"
-path.etc2="res://.godot/imported/de_dust2_-_cs_map_33.png-b347b4a74cf244677e3216eae5e635f2.etc2.ctex"
+path.s3tc="res://.godot/imported/de_dust2_-_cs_map_33.png-25721205b128c3cfe94c0ebc320b128c.s3tc.ctex"
+path.etc2="res://.godot/imported/de_dust2_-_cs_map_33.png-25721205b128c3cfe94c0ebc320b128c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://de_dust2_-_cs_map_33.png"
-dest_files=["res://.godot/imported/de_dust2_-_cs_map_33.png-b347b4a74cf244677e3216eae5e635f2.s3tc.ctex", "res://.godot/imported/de_dust2_-_cs_map_33.png-b347b4a74cf244677e3216eae5e635f2.etc2.ctex"]
+source_file="res://dust2/de_dust2_-_cs_map_33.png"
+dest_files=["res://.godot/imported/de_dust2_-_cs_map_33.png-25721205b128c3cfe94c0ebc320b128c.s3tc.ctex", "res://.godot/imported/de_dust2_-_cs_map_33.png-25721205b128c3cfe94c0ebc320b128c.etc2.ctex"]
 
 [params]
 

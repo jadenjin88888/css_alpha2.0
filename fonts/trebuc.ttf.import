@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bnbgbsolyyct2"
-path="res://.godot/imported/trebuc.ttf-4b5de53dccbd9395ba624544b24b97c8.fontdata"
+path="res://.godot/imported/trebuc.ttf-b70c73c4042978be72f970eecb989b7f.fontdata"
 
 [deps]
 
-source_file="res://trebuc.ttf"
-dest_files=["res://.godot/imported/trebuc.ttf-4b5de53dccbd9395ba624544b24b97c8.fontdata"]
+source_file="res://fonts/trebuc.ttf"
+dest_files=["res://.godot/imported/trebuc.ttf-b70c73c4042978be72f970eecb989b7f.fontdata"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bco3f4f70tgh3"
-path="res://.godot/imported/spammer.png-9c948e14d776aea72e175ffd19d47a62.ctex"
+path="res://.godot/imported/spammer.png-55e68e440d2d41cf1a6d2e1d2e722564.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spammer.png"
-dest_files=["res://.godot/imported/spammer.png-9c948e14d776aea72e175ffd19d47a62.ctex"]
+source_file="res://enemies/spammer.png"
+dest_files=["res://.godot/imported/spammer.png-55e68e440d2d41cf1a6d2e1d2e722564.ctex"]
 
 [params]
 
